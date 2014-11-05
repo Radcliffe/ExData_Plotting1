@@ -9,7 +9,7 @@
 #
 # This script runs four other scripts, which are assumed to
 # exist in the current working directory. It creates four PNG 
-# files named plot[1-4].png in the current working directory.
+# files named plot[1-4].png in the plots directory.
 ##############################################################
 
 ## Check that the dataset exists as a local text file.
