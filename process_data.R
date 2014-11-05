@@ -18,12 +18,16 @@ if (!file.exists("../data/household_power_consumption.txt")) {
 
 ## Read data table
 
-cachefile <- "../data/household_power_consumption.txt"
 power <- read.table(cachefile, sep=";", header=T, na.strings="?")
+
+## Select data from 2007, February 1 and 2
+
 p <- subset(power, Date == "1/2/2007" | Date == "2/2/2007")
 rm(power)
+
+
 p$Time <- strptime(paste(p$Date, ' ', p$Time), "%d/%m/%Y %H:%M:%S")
-p$Date <- factor(p$Date)
+p$Date <- as.Date(p$Date, "%d/%m/%Y")
 
 ## Create plots
 
