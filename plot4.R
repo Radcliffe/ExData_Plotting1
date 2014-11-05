@@ -2,7 +2,7 @@
 # This script is called by process_data.R and is not intended
 # to be executed independently.
 
-png(file = "plot4.png", width = 504, height = 504)
+png(file = "plot4.png", width = 480, height = 480)
 par(mfrow=c(2,2)) # Place the four subplots in a 2x2 grid
 
 # Upper left plot: Global active power vs Time

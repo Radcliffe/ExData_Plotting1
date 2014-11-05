@@ -2,7 +2,7 @@
 # This script is called by process_data.R and is not intended
 # to be executed independently.
 
-png(file = "plot3.png", width = 504, height = 504)
+png(file = "plot3.png", width = 480, height = 480)
 plot(p$Time, p$Sub_metering_1, type="l",
      xlab = "",
      ylab = "Energy sub metering")
