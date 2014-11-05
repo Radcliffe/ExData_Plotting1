@@ -45,6 +45,11 @@ file.remove("data/household_power_consumption.txt") #127 MB text file
 p$Time <- strptime(paste(p$Date, ' ', p$Time), "%d/%m/%Y %H:%M:%S")
 p$Date <- as.Date(p$Date, "%d/%m/%Y")
 
+## Ensure that plots directory exists
+
+if (!file.exists("plots")) 
+  dir.create("plots")
+
 ## Create plots as PNG files
 
 source("plot1.R")
