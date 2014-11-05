@@ -40,7 +40,7 @@ p <- subset(power, Date == "1/2/2007" | Date == "2/2/2007")
 rm(power)
 file.remove("data/household_power_consumption.txt") #127 MB text file
 
-## Convert Date and Time fields from strings to dates
+## Parse Date and Time fields
 
 p$Time <- strptime(paste(p$Date, ' ', p$Time), "%d/%m/%Y %H:%M:%S")
 p$Date <- as.Date(p$Date, "%d/%m/%Y")
