@@ -3,7 +3,7 @@
 # to be executed independently.
 
 png(file = "plots/plot2.png", width = 480, height = 480)
-plot(p$Time, p$Global_active_power, 
+plot(p$DateTime, p$Global_active_power, 
      type="l", 
      xlab="", 
      ylab="Global Active Power (kilowatts)")

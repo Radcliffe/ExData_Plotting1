@@ -1,6 +1,6 @@
 # This R script generates four plots using the data from the
 # Electric Power Consumption dataset, which is part of the
-# UC Irving Machine Language Repository. See the README.md
+# UC Irving Machine Learning Repository. See the README.md
 # file for more information.
 #
 # To run this script, type
@@ -16,17 +16,16 @@
 ## Download and unzip the dataset if necessary.
 
 if (!file.exists("data")) 
-  dir.create("data")
+    dir.create("data")
 
 if (!file.exists("data/household_power_consumption.txt")) {
-
-  if (!file.exists("data/household_power_consumption.zip")) {
-    download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", 
-                  destfile="data/household_power_consumption.zip",
-                  method="curl")
+    if (!file.exists("data/household_power_consumption.zip")) {
+        download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", 
+                      destfile="data/household_power_consumption.zip",
+                      method="curl")
   }
   
-  unzip("data/household_power_consumption.zip", exdir="data")
+    unzip("data/household_power_consumption.zip", exdir="data")
 }
 
 
@@ -42,13 +41,13 @@ file.remove("data/household_power_consumption.txt") #127 MB text file
 
 ## Parse Date and Time fields
 
-p$Time <- strptime(paste(p$Date, ' ', p$Time), "%d/%m/%Y %H:%M:%S")
+p$DateTime <- strptime(paste(p$Date, ' ', p$Time), "%d/%m/%Y %H:%M:%S")
 p$Date <- as.Date(p$Date, "%d/%m/%Y")
 
 ## Ensure that plots directory exists
 
 if (!file.exists("plots")) 
-  dir.create("plots")
+    dir.create("plots")
 
 ## Create plots as PNG files
 
